@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+TestResults/
+allure-results/
+*.user
+*.suo
+.vscode/

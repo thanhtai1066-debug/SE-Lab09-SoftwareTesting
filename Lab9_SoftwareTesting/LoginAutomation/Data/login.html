@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Login test demo</title></head>
+<body>
+  <h1>Login Demo (local test fixture)</h1>
+  <form id="loginForm">
+    <label for="username">Username</label><input id="username" type="text" required>
+    <label for="password">Password</label><input id="password" type="password" required>
+    <button id="loginButton" type="submit">Login</button>
+  </form>
+  <p id="status" role="status"></p>
+  <script>
+    const demoAccounts = { user1: "password1", user2: "password2", user3: "password3" };
+    document.getElementById("loginForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      document.getElementById("status").textContent = demoAccounts[username] === password
+        ? "Login successful" : "Invalid credentials";
+    });
+  </script>
+</body>
+</html>
